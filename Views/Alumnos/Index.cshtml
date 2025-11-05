@@ -1,31 +1,113 @@
 ﻿@model IEnumerable<GestionColegioJose1.Models.Alumno>
 
-<h2>Listado de Alumnos</h2>
+@{
+    ViewData["Title"] = "Listado de Alumnos";
+}
 
-<p><a asp-action="Create" class="btn btn-primary">Nuevo Alumno</a></p>
-
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Grado</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>@item.Nombre</td>
-                <td>@item.Apellido</td>
-                <td>@item.Grado</td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.AlumnoId">Editar</a> |
-                    <a asp-action="Details" asp-route-id="@item.AlumnoId">Detalles</a> |
-                    <a asp-action="Delete" asp-route-id="@item.AlumnoId">Eliminar</a>
-                </td>
-            </tr>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Colegio San José</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+    <style>
+        body {
+            background-color: #dbe7f9;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
         }
-    </tbody>
-</table>
+
+        h2 {
+            color: #4d73c9;
+            text-align: center;
+            margin-top: 40px;
+            font-weight: 600;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            margin-top: 30px;
+        }
+
+        .btn-add {
+            background-color: #4d73c9;
+            color: white;
+            border-radius: 50px;
+            padding: 10px 20px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+            .btn-add:hover {
+                background-color: #375ba7;
+                transform: translateY(-3px);
+            }
+
+        table {
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th {
+            background-color: #4d73c9;
+            color: white;
+            text-align: center;
+        }
+
+        td {
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .btn-sm {
+            border-radius: 50px;
+            padding: 6px 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Listado de Alumnos</h2>
+
+        <div class="text-end mt-4 mb-3">
+            <a asp-action="Create" class="btn-add"><i class="bi bi-person-plus"></i> Nuevo Alumno</a>
+        </div>
+
+        <div class="card">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Fecha Nacimiento</th>
+                        <th>Grado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Nombre</td>
+                            <td>@item.Apellido</td>
+                            <td>@item.FechaNacimiento</td>
+                            <td>@item.Grado</td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.AlumnoId" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i></a>
+                                <a asp-action="Details" asp-route-id="@item.AlumnoId" class="btn btn-info btn-sm text-white"><i class="bi bi-eye"></i></a>
+                                <a asp-action="Delete" asp-route-id="@item.AlumnoId" class="btn btn-danger btn-sm"><i class="bi bi-trash3"></i></a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

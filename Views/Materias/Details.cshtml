@@ -1,18 +1,33 @@
 ﻿@model GestionColegioJose1.Models.Materia
 
 @{
-    ViewData["Title"] = "Detalles de la Materia";
+    ViewData["Title"] = "Detalles de Materia";
 }
 
-<h2>Detalles de la Materia</h2>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Colegio San José</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<body style="background-color:#dbe7f9; font-family:'Segoe UI',Tahoma,sans-serif;">
+    <h2 class="text-center text-primary mt-5">Detalles de Materia</h2>
 
-<dl class="row">
-    <dt class="col-sm-2">Nombre</dt>
-    <dd class="col-sm-10">@Model.NombreMateria</dd>
+    <div class="card shadow p-4" style="max-width:500px; margin:40px auto; border-radius:15px;">
+        <dl class="row">
+            <dt class="col-sm-4">Nombre</dt>
+            <dd class="col-sm-8">@Model.NombreMateria</dd>
 
-    <dt class="col-sm-2">Docente</dt>
-    <dd class="col-sm-10">@Model.Docente</dd>
-</dl>
+            <dt class="col-sm-4">Docente</dt>
+            <dd class="col-sm-8">@Model.Docente</dd>
+        </dl>
 
-<a asp-action="Edit" asp-route-id="@Model.MateriaId" class="btn btn-primary">Editar</a>
-<a asp-action="Index" class="btn btn-secondary">Volver</a>
+        <div class="text-center mt-3">
+            <a asp-action="Edit" asp-route-id="@Model.MateriaId" class="btn btn-primary rounded-pill px-4">Editar</a>
+            <a asp-action="Index" class="btn btn-secondary rounded-pill px-4">Volver</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,11 +1,39 @@
 ﻿@model GestionColegioJose1.Models.Alumno
 
-<h2>¿Eliminar este alumno?</h2>
+@{
+    ViewData["Title"] = "Eliminar Alumno";
+}
 
-<p><strong>@Model.Nombre @Model.Apellido</strong></p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Colegio San José</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<body style="background-color:#dbe7f9; font-family:'Segoe UI',Tahoma,sans-serif;">
+    <h2 class="text-center text-danger mt-5">Eliminar Alumno</h2>
 
-<form asp-action="DeleteConfirmed">
-    <input type="hidden" asp-for="AlumnoId" />
-    <button type="submit" class="btn btn-danger">Eliminar</button>
-    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
-</form>
+    <div class="card shadow p-4" style="max-width:500px; margin:40px auto; border-radius:15px;">
+        <h5 class="text-center text-muted mb-4">¿Seguro que deseas eliminar este alumno?</h5>
+
+        <dl class="row">
+            <dt class="col-sm-4">Nombre</dt>
+            <dd class="col-sm-8">@Model.Nombre</dd>
+
+            <dt class="col-sm-4">Apellido</dt>
+            <dd class="col-sm-8">@Model.Apellido</dd>
+
+            <dt class="col-sm-4">Grado</dt>
+            <dd class="col-sm-8">@Model.Grado</dd>
+        </dl>
+
+        <form asp-action="Delete" class="text-center mt-4">
+            <input type="hidden" asp-for="AlumnoId" />
+            <button type="submit" class="btn btn-danger rounded-pill px-4">Eliminar</button>
+            <a asp-action="Index" class="btn btn-secondary rounded-pill px-4">Cancelar</a>
+        </form>
+    </div>
+</body>
+</html>

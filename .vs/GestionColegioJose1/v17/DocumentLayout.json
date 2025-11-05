@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Default\\Documents\\GestionColegioJose1\\GestionColegioJose1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5C9BBF01-7AC0-462D-A4B3-85220679B14B}|GestionColegioJose1.csproj|c:\\users\\default\\documents\\gestioncolegiojose1\\gestioncolegiojose1\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{5C9BBF01-7AC0-462D-A4B3-85220679B14B}|GestionColegioJose1.csproj|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+      "AbsoluteMoniker": "D:0:0:{5C9BBF01-7AC0-462D-A4B3-85220679B14B}|GestionColegioJose1.csproj|c:\\users\\default\\documents\\gestioncolegiojose1\\gestioncolegiojose1\\views\\expedientes\\promedios.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5C9BBF01-7AC0-462D-A4B3-85220679B14B}|GestionColegioJose1.csproj|solutionrelative:views\\expedientes\\promedios.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C9BBF01-7AC0-462D-A4B3-85220679B14B}|GestionColegioJose1.csproj|c:\\users\\default\\documents\\gestioncolegiojose1\\gestioncolegiojose1\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5C9BBF01-7AC0-462D-A4B3-85220679B14B}|GestionColegioJose1.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +23,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": ".gitignore",
-              "DocumentMoniker": "C:\\Users\\Default\\Documents\\GestionColegioJose1\\GestionColegioJose1\\.gitignore",
-              "RelativeDocumentMoniker": ".gitignore",
-              "ToolTip": "C:\\Users\\Default\\Documents\\GestionColegioJose1\\GestionColegioJose1\\.gitignore",
-              "RelativeToolTip": ".gitignore",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-11-05T03:33:00.149Z",
+              "Title": "Promedios.cshtml",
+              "DocumentMoniker": "C:\\Users\\Default\\Documents\\GestionColegioJose1\\GestionColegioJose1\\Views\\Expedientes\\Promedios.cshtml",
+              "RelativeDocumentMoniker": "Views\\Expedientes\\Promedios.cshtml",
+              "ToolTip": "C:\\Users\\Default\\Documents\\GestionColegioJose1\\GestionColegioJose1\\Views\\Expedientes\\Promedios.cshtml",
+              "RelativeToolTip": "Views\\Expedientes\\Promedios.cshtml",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAQwFsAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-05T05:03:35.313Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Default\\Documents\\GestionColegioJose1\\GestionColegioJose1\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Default\\Documents\\GestionColegioJose1\\GestionColegioJose1\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAAAFgAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-05T04:54:06.982Z",
               "EditorCaption": ""
             }
           ]

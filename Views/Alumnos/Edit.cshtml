@@ -1,23 +1,44 @@
 ﻿@model GestionColegioJose1.Models.Alumno
+@{
+    ViewData["Title"] = "Editar Alumno";
+}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Colegio San José</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<body style="background-color:#dbe7f9; font-family:'Segoe UI',Tahoma,sans-serif;">
+    <h2 class="text-center text-primary mt-5">Editar Alumno</h2>
 
-<h2>Agregar Alumno</h2>
+    <div class="card shadow p-4" style="max-width:500px; margin:40px auto; border-radius:15px;">
+        <form asp-action="Edit">
+            <input type="hidden" asp-for="AlumnoId" />
 
-<form asp-action="Edit">
-    <div class="mb-3">
-        <label asp-for="Nombre" class="form-label"></label>
-        <input asp-for="Nombre" class="form-control" />
-        <span asp-validation-for="Nombre" class="text-danger"></span>
+            <div class="mb-3">
+                <label asp-for="Nombre" class="form-label"></label>
+                <input asp-for="Nombre" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label asp-for="Apellido" class="form-label"></label>
+                <input asp-for="Apellido" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label asp-for="FechaNacimiento" class="form-label"></label>
+                <input asp-for="FechaNacimiento" type="date" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label asp-for="Grado" class="form-label"></label>
+                <input asp-for="Grado" class="form-control" />
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary rounded-pill px-4">Actualizar</button>
+                <a asp-action="Index" class="btn btn-secondary rounded-pill px-4">Cancelar</a>
+            </div>
+        </form>
     </div>
-    <div class="mb-3">
-        <label asp-for="Apellido" class="form-label"></label>
-        <input asp-for="Apellido" class="form-control" />
-        <span asp-validation-for="Apellido" class="text-danger"></span>
-    </div>
-    <div class="mb-3">
-        <label asp-for="Grado" class="form-label"></label>
-        <input asp-for="Grado" class="form-control" />
-        <span asp-validation-for="Grado" class="text-danger"></span>
-    </div>
-    <button type="submit" class="btn btn-success">Guardar</button>
-    <a asp-action="Index" class="btn btn-secondary">Volver</a>
-</form>
+</body>
+</html>

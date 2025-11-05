@@ -556,3 +556,4 @@ C:\Users\Default\Documents\GestionColegioJose1\GestionColegioJose1\obj\Debug\net
 C:\Users\Default\Documents\GestionColegioJose1\GestionColegioJose1\obj\Debug\net8.0\GestionColegioJose1.pdb
 C:\Users\Default\Documents\GestionColegioJose1\GestionColegioJose1\obj\Debug\net8.0\GestionColegioJose1.genruntimeconfig.cache
 C:\Users\Default\Documents\GestionColegioJose1\GestionColegioJose1\obj\Debug\net8.0\ref\GestionColegioJose1.dll
+C:\Users\Default\Documents\GestionColegioJose1\GestionColegioJose1\obj\Debug\net8.0\GestionColegioJose1.sourcelink.json

@@ -4,31 +4,33 @@
     ViewData["Title"] = "Eliminar Materia";
 }
 
-<h2>Eliminar Materia</h2>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Colegio San José</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<body style="background-color:#dbe7f9; font-family:'Segoe UI',Tahoma,sans-serif;">
+    <h2 class="text-center text-danger mt-5">Eliminar Materia</h2>
 
-<h4>¿Estás seguro de que deseas eliminar esta materia?</h4>
-<hr />
+    <div class="card shadow p-4" style="max-width:500px; margin:40px auto; border-radius:15px;">
+        <h5 class="text-center text-muted mb-4">¿Seguro que deseas eliminar esta materia?</h5>
 
-<div>
-    <dl class="row">
-        <dt class="col-sm-2">Nombre</dt>
-        <dd class="col-sm-10">@Model.NombreMateria</dd>
+        <dl class="row">
+            <dt class="col-sm-4">Nombre</dt>
+            <dd class="col-sm-8">@Model.NombreMateria</dd>
 
-        <dt class="col-sm-2">Docente</dt>
-        <dd class="col-sm-10">@Model.Docente</dd>
-    </dl>
-</div>
+            <dt class="col-sm-4">Docente</dt>
+            <dd class="col-sm-8">@Model.Docente</dd>
+        </dl>
 
-<form asp-action="Delete" method="post">
-    <input type="hidden" asp-for="MateriaId" />
-    <div class="mt-3">
-        <button type="submit" class="btn btn-danger">Eliminar</button>
-        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+        <form asp-action="Delete" class="text-center mt-4">
+            <input type="hidden" asp-for="MateriaId" />
+            <button type="submit" class="btn btn-danger rounded-pill px-4">Eliminar</button>
+            <a asp-action="Index" class="btn btn-secondary rounded-pill px-4">Cancelar</a>
+        </form>
     </div>
-</form>
-
-@section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
-}
+</body>
+</html>

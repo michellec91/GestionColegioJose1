@@ -1,5 +1,6 @@
 ﻿@{
-    ViewData["Title"] = "Inicio";
+    Layout = null;
+    ViewData["Title"] = "Colegio San José";
 }
 
 <!DOCTYPE html>
@@ -7,59 +8,108 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Gestión Colegio San José</title>
+    <title>@ViewData["Title"]</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+    <style>
+        body {
+            background-color: #dbe7f9;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .top-bar {
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            background-color: #cbdaf7;
+            border-radius: 12px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+            padding: 8px 20px;
+        }
+
+            .top-bar h3 {
+                color: #2e5dbb;
+                font-weight: 600;
+                font-size: 18px;
+                margin: 0;
+            }
+
+        h1 {
+            color: #4d73c9;
+            font-size: 60px;
+            font-weight: 600;
+            margin-bottom: 50px;
+        }
+
+        .menu-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        .menu-button {
+            background-color: #e3ecff;
+            color: #2e5dbb;
+            border: none;
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+            transition: all 0.3s ease;
+            text-align: center;
+            font-size: 15px;
+            font-weight: 500;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+
+            .menu-button:hover {
+                background-color: #4d73c9;
+                color: white;
+                transform: translateY(-4px);
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+            }
+
+            .menu-button i {
+                font-size: 28px;
+                margin-bottom: 8px;
+            }
+    </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm navbar-light bg-light border-bottom box-shadow mb-3">
-        <div class="container">
-            <a class="navbar-brand fw-semibold text-primary" asp-controller="Home" asp-action="Index">Colegio San José</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                <ul class="navbar-nav flex-grow-1">
-                    <li class="nav-item"><a class="nav-link text-dark" asp-controller="Home" asp-action="Index">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link text-dark" asp-controller="Alumnos" asp-action="Index">Alumnos</a></li>
-                    <li class="nav-item"><a class="nav-link text-dark" asp-controller="Materias" asp-action="Index">Materias</a></li>
-                    <li class="nav-item"><a class="nav-link text-dark" asp-controller="Expedientes" asp-action="Index">Expedientes</a></li>
-                    <li class="nav-item"><a class="nav-link text-dark" asp-controller="Expedientes" asp-action="Promedios">Promedios</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <div class="container mt-4">
-        <div class="text-center mb-4">
-            <h1 class="display-5 fw-bold text-primary">Gestión Colegio San José</h1>
-            <p class="lead text-muted">Sistema de gestión académica y expedientes estudiantiles</p>
-        </div>
-
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card shadow-sm border-0 mb-4">
-                    <div class="card-body">
-                        <h4 class="card-title text-secondary mb-3">Bienvenido</h4>
-                        <p class="card-text">
-                            Este sistema permite registrar y administrar la información académica de los alumnos del Colegio San José.
-                            Desde aquí puedes gestionar alumnos, materias y expedientes con sus respectivas calificaciones.
-                        </p>
-                        <p class="card-text">
-                            Usa el menú superior para navegar por las distintas secciones del sistema.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="top-bar">
+        <h3>GestionColegioJose1</h3>
     </div>
 
-    <footer class="border-top footer text-muted mt-5">
-        <div class="container text-center">
-            &copy; @DateTime.Now.Year - Gestión Colegio San José | Proyecto ASP.NET Core MVC
+    <div class="text-center">
+        <h1>Colegio San José</h1>
+        <div class="menu-container">
+            <a asp-controller="Alumnos" asp-action="Index" class="menu-button">
+                <i class="bi bi-person-lines-fill"></i>
+                Alumnos
+            </a>
+            <a asp-controller="Materias" asp-action="Index" class="menu-button">
+                <i class="bi bi-book-half"></i>
+                Materias
+            </a>
+            <a asp-controller="Expedientes" asp-action="Index" class="menu-button">
+                <i class="bi bi-folder2-open"></i>
+                Expedientes
+            </a>
+            <a asp-controller="Expedientes" asp-action="Promedios" class="menu-button">
+                <i class="bi bi-bar-chart-line"></i>
+                Promedios
+            </a>
         </div>
-    </footer>
-
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    </div>
 </body>
 </html>

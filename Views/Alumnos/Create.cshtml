@@ -1,23 +1,80 @@
 ﻿@model GestionColegioJose1.Models.Alumno
 
-<h2>Agregar Alumno</h2>
+@{
+    ViewData["Title"] = "Agregar Alumno";
+}
 
-<form asp-action="Create">
-    <div class="mb-3">
-        <label asp-for="Nombre" class="form-label"></label>
-        <input asp-for="Nombre" class="form-control" />
-        <span asp-validation-for="Nombre" class="text-danger"></span>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Colegio San José</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <style>
+        body {
+            background-color: #dbe7f9;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+        }
+
+        h2 {
+            color: #4d73c9;
+            font-weight: 600;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            padding: 30px;
+            width: 500px;
+            margin: 40px auto;
+        }
+
+        .btn-save {
+            background-color: #4d73c9;
+            color: white;
+            border-radius: 50px;
+            padding: 10px 20px;
+        }
+
+        .btn-cancel {
+            border-radius: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Agregar Alumno</h2>
+
+    <div class="card">
+        <form asp-action="Create">
+            <div class="mb-3">
+                <label asp-for="Nombre" class="form-label"></label>
+                <input asp-for="Nombre" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Apellido" class="form-label"></label>
+                <input asp-for="Apellido" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="FechaNacimiento" class="form-label"></label>
+                <input asp-for="FechaNacimiento" type="date" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Grado" class="form-label"></label>
+                <input asp-for="Grado" class="form-control" />
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-save">Guardar</button>
+                <a asp-action="Index" class="btn btn-secondary btn-cancel">Cancelar</a>
+            </div>
+        </form>
     </div>
-    <div class="mb-3">
-        <label asp-for="Apellido" class="form-label"></label>
-        <input asp-for="Apellido" class="form-control" />
-        <span asp-validation-for="Apellido" class="text-danger"></span>
-    </div>
-    <div class="mb-3">
-        <label asp-for="Grado" class="form-label"></label>
-        <input asp-for="Grado" class="form-control" />
-        <span asp-validation-for="Grado" class="text-danger"></span>
-    </div>
-    <button type="submit" class="btn btn-success">Guardar</button>
-    <a asp-action="Index" class="btn btn-secondary">Volver</a>
-</form>
+</body>
+</html>
