@@ -1,0 +1,34 @@
+﻿@model GestionColegioJose1.Models.Materia
+
+@{
+    ViewData["Title"] = "Eliminar Materia";
+}
+
+<h2>Eliminar Materia</h2>
+
+<h4>¿Estás seguro de que deseas eliminar esta materia?</h4>
+<hr />
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">Nombre</dt>
+        <dd class="col-sm-10">@Model.NombreMateria</dd>
+
+        <dt class="col-sm-2">Docente</dt>
+        <dd class="col-sm-10">@Model.Docente</dd>
+    </dl>
+</div>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="MateriaId" />
+    <div class="mt-3">
+        <button type="submit" class="btn btn-danger">Eliminar</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

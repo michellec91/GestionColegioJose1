@@ -1,0 +1,33 @@
+﻿@model IEnumerable<GestionColegioJose1.Models.Materia>
+
+@{
+    ViewData["Title"] = "Listado de Materias";
+}
+
+<h2>Listado de Materias</h2>
+
+<p><a asp-action="Create" class="btn btn-primary">Nueva Materia</a></p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Docente</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var m in Model)
+        {
+            <tr>
+                <td>@m.NombreMateria</td>
+                <td>@m.Docente</td>
+                <td class="text-nowrap">
+                    <a asp-action="Details" asp-route-id="@m.MateriaId" class="btn btn-sm btn-info">Detalles</a>
+                    <a asp-action="Edit" asp-route-id="@m.MateriaId" class="btn btn-sm btn-warning">Editar</a>
+                    <a asp-action="Delete" asp-route-id="@m.MateriaId" class="btn btn-sm btn-danger">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

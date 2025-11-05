@@ -1,0 +1,39 @@
+﻿@model IEnumerable<GestionColegioJose1.Models.Expediente>
+
+@{
+    ViewData["Title"] = "Listado de Expedientes";
+}
+
+<h2>Listado de Expedientes</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Nuevo Expediente</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Alumno</th>
+            <th>Materia</th>
+            <th>Nota Final</th>
+            <th>Observaciones</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@(item.Alumno?.NombreCompleto)</td>
+                <td>@(item.Materia?.NombreMateria)</td>
+                <td>@(item.NotaFinal?.ToString("0.00"))</td>
+                <td>@item.Observaciones</td>
+                <td class="text-nowrap">
+                    <a asp-action="Details" asp-route-id="@item.ExpedienteId" class="btn btn-sm btn-info">Detalles</a>
+                    <a asp-action="Edit" asp-route-id="@item.ExpedienteId" class="btn btn-sm btn-warning">Editar</a>
+                    <a asp-action="Delete" asp-route-id="@item.ExpedienteId" class="btn btn-sm btn-danger">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

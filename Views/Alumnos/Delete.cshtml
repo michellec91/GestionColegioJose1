@@ -1,0 +1,11 @@
+﻿@model GestionColegioJose1.Models.Alumno
+
+<h2>¿Eliminar este alumno?</h2>
+
+<p><strong>@Model.Nombre @Model.Apellido</strong></p>
+
+<form asp-action="DeleteConfirmed">
+    <input type="hidden" asp-for="AlumnoId" />
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>

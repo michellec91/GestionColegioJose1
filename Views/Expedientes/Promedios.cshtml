@@ -1,0 +1,27 @@
+﻿@model IEnumerable<GestionColegioJose1.Controllers.PromedioVM>
+
+@{
+    ViewData["Title"] = "Promedios por Alumno";
+}
+
+<h2>Promedios por Alumno</h2>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Alumno</th>
+            <th>Promedio</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Alumno</td>
+                <td>@item.Promedio.ToString("0.00")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Index" class="btn btn-secondary">Volver</a>

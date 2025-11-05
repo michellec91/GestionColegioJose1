@@ -1,0 +1,36 @@
+﻿@model GestionColegioJose1.Models.Expediente
+
+@{
+    ViewData["Title"] = "Eliminar Expediente";
+}
+
+<h2>Eliminar Expediente</h2>
+
+<h4>¿Seguro que quieres eliminar este expediente?</h4>
+<hr />
+
+<dl class="row">
+    <dt class="col-sm-2">Alumno</dt>
+    <dd class="col-sm-10">@Model.Alumno?.NombreCompleto</dd>
+
+    <dt class="col-sm-2">Materia</dt>
+    <dd class="col-sm-10">@Model.Materia?.NombreMateria</dd>
+
+    <dt class="col-sm-2">Nota Final</dt>
+    <dd class="col-sm-10">@Model.NotaFinal</dd>
+
+    <dt class="col-sm-2">Observaciones</dt>
+    <dd class="col-sm-10">@Model.Observaciones</dd>
+</dl>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="ExpedienteId" />
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

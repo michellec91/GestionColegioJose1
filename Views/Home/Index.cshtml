@@ -1,0 +1,65 @@
+﻿@{
+    ViewData["Title"] = "Inicio";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Gestión Colegio San José</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-light bg-light border-bottom box-shadow mb-3">
+        <div class="container">
+            <a class="navbar-brand fw-semibold text-primary" asp-controller="Home" asp-action="Index">Colegio San José</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item"><a class="nav-link text-dark" asp-controller="Home" asp-action="Index">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark" asp-controller="Alumnos" asp-action="Index">Alumnos</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark" asp-controller="Materias" asp-action="Index">Materias</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark" asp-controller="Expedientes" asp-action="Index">Expedientes</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark" asp-controller="Expedientes" asp-action="Promedios">Promedios</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="text-center mb-4">
+            <h1 class="display-5 fw-bold text-primary">Gestión Colegio San José</h1>
+            <p class="lead text-muted">Sistema de gestión académica y expedientes estudiantiles</p>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow-sm border-0 mb-4">
+                    <div class="card-body">
+                        <h4 class="card-title text-secondary mb-3">Bienvenido</h4>
+                        <p class="card-text">
+                            Este sistema permite registrar y administrar la información académica de los alumnos del Colegio San José.
+                            Desde aquí puedes gestionar alumnos, materias y expedientes con sus respectivas calificaciones.
+                        </p>
+                        <p class="card-text">
+                            Usa el menú superior para navegar por las distintas secciones del sistema.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="border-top footer text-muted mt-5">
+        <div class="container text-center">
+            &copy; @DateTime.Now.Year - Gestión Colegio San José | Proyecto ASP.NET Core MVC
+        </div>
+    </footer>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
